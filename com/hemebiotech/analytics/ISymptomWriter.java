@@ -1,5 +1,5 @@
-package com.hemebiotech.analytics;
 
+package com.hemebiotech.analytics;
 import java.util.Map;
 
 
@@ -8,5 +8,6 @@ import java.util.Map;
  *
  */
 public interface ISymptomWriter {
-// WRITE YOUR CODE HERE
+   
+  void writeSymptoms(Map<String,Integer> symptoms);
 }

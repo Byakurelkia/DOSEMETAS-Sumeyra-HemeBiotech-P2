@@ -39,6 +39,5 @@ public class AnalyticsCounter {
 		writer.write("rash: " + rashCount + "\n");
 		writer.write("dialated pupils: " + pupilCount + "\n");
 		writer.close();
-    system.out.println("bitti");
 	}
 }
