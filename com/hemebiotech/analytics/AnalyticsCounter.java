@@ -58,7 +58,7 @@ public class AnalyticsCounter {
 
   public Map<String,Integer> countSymptoms(List<String> symptoms){
     Map<String,Integer> mapList =new HashMap<>();
-		int quantity=1;
+		int quantity=0;
 		for ( int i = 0; i < symptoms.size(); i++) {
 			String field = symptoms.get(i);
 			for(int j = i; j < symptoms.size(); j++) {
@@ -72,7 +72,7 @@ public class AnalyticsCounter {
 			{
 				mapList.put(field, quantity);
 			}
-			quantity = 1;
+			quantity = 0;
 		}
 		return mapList;
 	}

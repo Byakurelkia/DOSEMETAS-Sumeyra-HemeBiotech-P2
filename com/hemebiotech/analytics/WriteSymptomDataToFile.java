@@ -19,8 +19,9 @@ public class WriteSymptomDataToFile implements  ISymptomWriter {
       try{
         BufferedWriter bWriter = new BufferedWriter(new FileWriter("result.out"));
         for(Map.Entry<String,Integer> datas : mapSymptoms.entrySet()){
-        bWriter.write(datas.getKey() + ":"+ datas.getValue());
+        bWriter.write(datas.getKey() + " : "+ datas.getValue() + "\n");
       }
+      bWriter.close();
       }catch(Exception e){
         e.printStackTrace();
       }
@@ -30,8 +31,6 @@ public class WriteSymptomDataToFile implements  ISymptomWriter {
 
 //control if file is present or not, if not, creates a new file
 public static boolean fileExists(String pathFile){
-
-		 
       boolean value;
 		  try {
       File file = new File (pathFile);
