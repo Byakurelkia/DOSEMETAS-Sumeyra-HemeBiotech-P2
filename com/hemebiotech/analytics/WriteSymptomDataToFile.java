@@ -7,19 +7,22 @@ import java.io.IOException;
 import java.util.Map;
 import java.io.File;
 
-//Class for writes symptoms and quantity 
+//Writes symptoms and quantity 
 public class WriteSymptomDataToFile implements  ISymptomWriter {
+  private String pathName;
 
-  public WriteSymptomDataToFile (){
+  public WriteSymptomDataToFile (String pathName){
+    this.pathName = pathName;
   }
 
   //write symptoms and quantity on the file specified
   public void writeSymptoms(Map<String,Integer> mapSymptoms){
-    if(fileExists("result.out")){
+    if(fileExists(pathName)){
       try{
-        BufferedWriter bWriter = new BufferedWriter(new FileWriter("result.out"));
+        BufferedWriter bWriter = new BufferedWriter(new FileWriter(pathName));
+        //writes all symptoms & quantity present in the map in a file with an iteration
         for(Map.Entry<String,Integer> datas : mapSymptoms.entrySet()){
-        bWriter.write(datas.getKey() + " : "+ datas.getValue() + "\n");
+        bWriter.write(datas.getKey() + " : "+ datas.getValue() + "\n"  );
       }
       bWriter.close();
       }catch(Exception e){

@@ -8,7 +8,7 @@ public class Main {
 public static void main(String[] args){
 
   ISymptomReader rSymptomReader = new ReadSymptomDataFromFile("symptoms.txt");
-  ISymptomWriter rSymptomWriter =  new WriteSymptomDataToFile();
+  ISymptomWriter rSymptomWriter =  new WriteSymptomDataToFile("result.out");
   AnalyticsCounter aCounter = new AnalyticsCounter(rSymptomReader, rSymptomWriter);
 
   List<String> symptoms = aCounter.getSymptoms();
@@ -16,11 +16,6 @@ public static void main(String[] args){
   Map<String,Integer> sortedSymtpoms = aCounter.sortSymptoms(countSymptoms);
   aCounter.writeSymptoms(sortedSymtpoms);
   
-
-
-
 }
-
-
 
 }
